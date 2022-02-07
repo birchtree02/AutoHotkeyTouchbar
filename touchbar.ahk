@@ -11,6 +11,9 @@ Gui, Add, Text, vtext
 
 Gui, Add, Button, h50 w50 vD1      greloadsub, Reload
 
+Gui, Add, Button, h50 w50 vD2 x+10 gdiscordsub, Discord
+Gui, Add, Button, h50 w50 vD3 x+10 gAHKsub, AHK
+
 Gui, Add, Text,x+1,
 
 Gui, Add, Button, h50 w50 vB1 x+10 gbut1
@@ -28,6 +31,9 @@ SetTimer, Refresh, 250
 return
 
 #Include, modes\defaults.ahk
+
+#Include, modes\vscode.ahk
+#Include, modes\amongus.ahk
 
 reloadsub:
 {
@@ -65,6 +71,10 @@ ButtonHandler(x)
     global LastWindow
     If (Defaults(x)) {
     }
+    Else If (VSCode(x)) {
+    }
+    Else If (AmongUs(x)) {
+    }
 }
 
 renameButtons:
@@ -74,6 +84,10 @@ b3name :=
 b4name :=
 
 If (Defaults())
+{}
+Else If (VSCode())
+{}
+Else If (AmongUs())
 {}
 
 
