@@ -20,6 +20,11 @@ Gui, Add, Button, h50 w50 vB1 x+10 gbut1
 Gui, Add, Button, h50 w50 vB2 x+10 gbut2
 Gui, Add, Button, h50 w50 vB3 x+10 gbut3
 Gui, Add, Button, h50 w50 vB4 x+10 gbut4
+Gui, Add, Button, h50 w50 vB5 x+10 gbut5
+Gui, Add, Button, h50 w50 vB6 x+10 gbut6
+Gui, Add, Button, h50 w50 vB7 x+10 gbut7
+Gui, Add, Button, h50 w50 vB8 x+10 gbut8
+Gui, Add, Button, h50 w50 vB9 x+10 gbut9
 
 
 Gui, Show
@@ -65,6 +70,36 @@ but4:
 }
 return
 
+but5:
+{
+    ButtonHandler(5)
+}
+return
+
+but6:
+{
+    ButtonHandler(6)
+}
+return
+
+but7:
+{
+    ButtonHandler(7)
+}
+return
+
+but8:
+{
+    ButtonHandler(8)
+}
+return
+
+but9:
+{
+    ButtonHandler(9)
+}
+return
+
 
 ButtonHandler(x)
 {
@@ -82,6 +117,11 @@ b1name :=
 b2name :=
 b3name :=
 b4name :=
+b5name :=
+b6name :=
+b7name :=
+b8name :=
+b9name :=
 
 If (Defaults())
 {}
@@ -95,6 +135,11 @@ GuiControl touchbar:, B1, %b1name%
 GuiControl touchbar:, B2, %b2name%
 GuiControl touchbar:, B3, %b3name%
 GuiControl touchbar:, B4, %b4name%
+GuiControl touchbar:, B5, %b5name%
+GuiControl touchbar:, B6, %b6name%
+GuiControl touchbar:, B7, %b7name%
+GuiControl touchbar:, B8, %b8name%
+GuiControl touchbar:, B9, %b9name%
 return
 
 Refresh:
