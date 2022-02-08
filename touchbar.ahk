@@ -5,9 +5,10 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 WinGetTitle, LastWindow, A
 
 Gui touchbar: New
+Gui +HwndGuiHwnd
 Gui +AlwaysOnTop
 Gui +ToolWindow
-Gui, Add, Text, vtext
+; Gui, Add, Text, w1000 vtext
 
 Gui, Add, Button, h50 w50 vD1      greloadsub, Reload
 
@@ -27,7 +28,7 @@ Gui, Add, Button, h50 w50 vB8 x+10 gbut8
 Gui, Add, Button, h50 w50 vB9 x+10 gbut9
 
 
-Gui, Show
+Gui touchbar:Show, % "y" A_ScreenHeight - 50
 
 
 #Persistent
@@ -143,7 +144,17 @@ GuiControl touchbar:, B9, %b9name%
 return
 
 Refresh:
+MouseGetPos,,, WinID
 WinGetTitle, ThisWindow, A
+
+If (WinID = GuiHwnd) {
+    WinMove, ahk_id %GuiHwnd%, ,, A_ScreenHeight - 90
+} Else {
+    WinMove, ahk_id %GuiHwnd%, ,, A_ScreenHeight - 50
+}
+
+WinActivate, %ThisWindow%
+
 If (ThisWindow = "touchbar.ahk" or ThisWindow = "Task Switching") {
 
 }
